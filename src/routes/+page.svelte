@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ArrowButton from '../components/ArrowButton.svelte';
+	import LineDecoration from '../components/LineDecoration.svelte';
 	import Card from './Card.svelte';
 	import type { Project } from './projects/project';
 	import ProjectCard from './projects/ProjectCard.svelte';
@@ -66,38 +68,23 @@
 		<h3 class="text-lg sm:text-xl md:text-2xl text-stone-400 font-semibold">Software Developer</h3>
 	</div>
 </section>
-<div
-	class="-z-20 border-b-2 border-stone-400 border-opacity-10 border-dashed w-full transform skew-y-2 absolute"
->
-	<div class="flex justify-end sm:justify-between">
-		<div class="hidden sm:flex transform translate-y-1/2 gap-1 md:gap-2">
-			<div class="bg-stone-400 h-4 md:h-6 w-12 lg:w-24 rounded-full" />
-			<div class="bg-stone-200 h-4 md:h-6 w-12 rounded-full" />
-			<div
-				class="bg-amber-500 bg-opacity-40 h-4 sm:h-6 md:h-8 w-24 lg:w-48 absolute transform -translate-y-3 translate-x-4 md:-translate-y-6 md:translate-x-8 rounded-full"
-			/>
-		</div>
-		<div class="flex flex-row-reverse gap-1 md:gap-2 transform translate-y-1/2">
-			<div class="bg-stone-500 h-4 md:h-6 w-16 sm:w-24 rounded-full" />
-			<div class="bg-stone-200 h-4 md:h-6 w-6 rounded-full" />
-			<div class="bg-amber-500 h-4 md:h-6 w-12 rounded-full" />
-			<div
-				class="bg-amber-500 bg-opacity-40 h-4 sm:h-6 md:h-8 w-48 absolute transform translate-y-3 -translate-x-4 md:translate-y-4 md:-translate-x-8 rounded-full"
-			/>
-		</div>
-	</div>
-</div>
+<LineDecoration class="absolute transform rotate-2" />
 <div class="pb-4" />
 <section class="home-section text-stone-700 space-y-1 md:space-y-4">
 	<h2 class="section-label">Blog</h2>
 	<div class="flex gap-4">
-		<div class="rounded-lg border-2 border-stone-200 border-dashed w-full flex justify-center p-4">
-			This section is under construction!
+		<div
+			class="rounded-lg border-2 border-stone-200 border-dashed w-full flex justify-center p-4 text-xl"
+		>
+			🚧 This section is under construction! 🚧
 		</div>
 	</div>
 </section>
 <section class="home-section text-stone-700 space-y-1 md:space-y-4">
-	<h2 class="section-label">Projects</h2>
+	<div class="flex gap-4 items-center">
+		<h2 class="section-label">Projects</h2>
+		<!-- <ArrowButton>More</ArrowButton> -->
+	</div>
 	<div class="flex gap-4">
 		{#each projects as project}
 			<ProjectCard {project} />
@@ -112,12 +99,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-	.home-section {
-		@apply mx-auto max-w-xl sm:max-w-[640px] md:max-w-3xl lg:max-w-5xl px-4 my-2 sm:my-4 md:my-8;
-	}
-	.section-label {
-		@apply text-lg sm:text-xl md:text-3xl font-semibold;
-	}
-</style>
