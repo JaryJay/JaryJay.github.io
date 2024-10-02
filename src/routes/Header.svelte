@@ -19,9 +19,9 @@
 			{#each routes as { route, name }, i}
 				<li
 					aria-current={$page.url.pathname === route ? 'page' : undefined}
-					class="font-bold py-1 md:py-2 text-stone-700 text-sm md:text-base"
+					class="font-semibold py-1 md:py-2 text-stone-700 text-sm md:text-base group"
 				>
-					<a href={route}>{name}</a>
+					<a href={route} class="underline-animation relative">{name}</a>
 				</li>
 			{/each}
 		</ul>
@@ -34,5 +34,14 @@
 <style>
 	li[aria-current='page'] {
 		@apply font-extrabold;
+	}
+
+	.underline-animation::after {
+		content: '';
+		@apply absolute left-0 bottom-0 w-full h-[1px] bg-current scale-x-0 transition-transform duration-300 ease-in-out;
+	}
+
+	.group:hover .underline-animation::after {
+		@apply scale-x-100;
 	}
 </style>

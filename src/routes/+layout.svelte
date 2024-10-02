@@ -3,7 +3,7 @@
 	import '../app.css';
 </script>
 
-<div class="app">
+<div class="app text-stone-700">
 	<Header />
 
 	<main>
