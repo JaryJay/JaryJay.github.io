@@ -9,7 +9,7 @@
 		{ route: '/', name: 'HOME' },
 		{ route: '/blog', name: 'BLOG' },
 		{ route: '/projects', name: 'PROJECTS' },
-		{ route: '/faith', name: 'FAITH' }
+		{ route: '/faith', name: 'FAITH' },
 	];
 </script>
 
