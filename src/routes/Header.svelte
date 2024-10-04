@@ -7,9 +7,9 @@
 	};
 	const routes: Route[] = [
 		{ route: '/', name: 'HOME' },
-		{ route: '/blog', name: 'BLOG' },
-		{ route: '/projects', name: 'PROJECTS' },
-		{ route: '/faith', name: 'FAITH' },
+		// { route: '/blog', name: 'BLOG' },
+		{ route: '/projects', name: 'ALL PROJECTS' },
+		// { route: '/faith', name: 'FAITH' },
 	];
 </script>
 
