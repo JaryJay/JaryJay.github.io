@@ -27,6 +27,14 @@ export const projects: Project[] = [
 		imageUrls: ['/projects/facebook-bot/image.png'],
 	},
 	{
+		name: 'Java Serialization Library',
+		description:
+			'A Java serialization library, optimized for compactness.\nComes with a webapp (built in Vue) for generating boilerplate code.',
+		devpostLink: 'https://derealizer-class-generator.netlify.app/#/',
+		githubLink: 'https://github.com/virtual-cardboard/derealizer',
+		imageUrls: ['/projects/derealizer/image.png'],
+	},
+	{
 		name: 'TTRPG command-line tool',
 		description:
 			'A command-line tool for DMs to manage tabletop role-playing games, made in plain Java.',
