@@ -2,7 +2,7 @@
 	import BlobDecoration from './BlobDecoration.svelte';
 </script>
 
-<div class={'border-b-2 border-stone-200 border-dashed w-full ' + $$props.class}>
+<div class={'-z-10 border-b-2 border-stone-200 border-dashed w-full ' + $$props.class}>
 	<div class="flex justify-between relative">
 		<div class="flex transform translate-y-1/2 gap-1 md:gap-2">
 			<BlobDecoration size="md" class="bg-stone-400" />

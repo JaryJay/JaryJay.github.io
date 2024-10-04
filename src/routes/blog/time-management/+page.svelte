@@ -49,6 +49,12 @@
 
 <style>
 	p {
-		@apply indent-8;
+		@apply indent-8 my-1;
+	}
+	h3 {
+		@apply mt-4 mb-2;
+	}
+	ol {
+		@apply my-2;
 	}
 </style>
