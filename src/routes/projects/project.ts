@@ -13,7 +13,11 @@ export const projects: Project[] = [
 		description:
 			"A real-time strategy game where you command an army of squads to battle against up to 5 other players. It's built with Godot 4.2!\nSpring Dynasty offers a singleplayer campaign and a multiplayer free-for-all experience.",
 		githubLink: 'https://github.com/JaryJay/spring-dynasty',
-		imageUrls: ['/projects/spring-dynasty/image.png', '/projects/spring-dynasty/image.png'],
+		imageUrls: [
+			'/projects/spring-dynasty/image.png',
+			'/projects/spring-dynasty/image2.png',
+			'/projects/spring-dynasty/image3.png',
+		],
 	},
 	{
 		name: 'Facebook Bot',
