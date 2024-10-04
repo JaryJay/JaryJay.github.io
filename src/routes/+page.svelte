@@ -1,8 +1,6 @@
 <script lang="ts">
-	import ArrowButton from '../components/ArrowButton.svelte';
-	import LineDecoration from '../components/LineDecoration.svelte';
-	import Card from './Card.svelte';
-	import type { Project } from './projects/project';
+	import LineDecoration from '@/components/LineDecoration.svelte';
+	import { type Project, projects } from './projects/project';
 	import ProjectCard from './projects/ProjectCard.svelte';
 
 	type BlogPreview = {
@@ -16,24 +14,7 @@
 		{ name: 'Test Blog', description: 'Lorem ipsum dolor sit amet' },
 	];
 
-	const projects: Project[] = [
-		{
-			name: 'Spring Dynasty',
-			description:
-				"A real-time strategy game where you command an army of squads to battle against up to 5 other players. It's built with Godot 4.2!\nSpring Dynasty offers a singleplayer campaign and a multiplayer free-for-all experience.",
-			githubLink: 'https://github.com/JaryJay/spring-dynasty',
-			imageUrl:
-				'https://private-user-images.githubusercontent.com/47123100/279412708-b8181df4-5b4e-48ac-b519-52a67cc1e4b0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc5MDA4NDgsIm5iZiI6MTcyNzkwMDU0OCwicGF0aCI6Ii80NzEyMzEwMC8yNzk0MTI3MDgtYjgxODFkZjQtNWI0ZS00OGFjLWI1MTktNTJhNjdjYzFlNGIwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDIwMjIyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYwNzZiZjEzYTRmNmMwMTUzNjVlMWY5Mjk3NzU3NDg1MzRmODI3OTU3ZjdkMDM4NWUyOTI2NjhiOWVkYmQ2NzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.dfueRDkjW4wF6pxor_q5iZPw2yz-LaTuAXtEKl840vI',
-		},
-		{
-			name: 'Facebook Bot',
-			description:
-				'A desktop app that automatically scrapes Facebook Marketplace for deals.\nBuilt with Electron, Typescript, Vue.js, Selenium, and TailwindCSS!',
-			githubLink: 'https://github.com/JaryJay/facebook-bot',
-			imageUrl:
-				'https://private-user-images.githubusercontent.com/47123100/296519502-96849a80-c3bd-489a-8e77-34ab0829fc2b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc5MDA5MzcsIm5iZiI6MTcyNzkwMDYzNywicGF0aCI6Ii80NzEyMzEwMC8yOTY1MTk1MDItOTY4NDlhODAtYzNiZC00ODlhLThlNzctMzRhYjA4MjlmYzJiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDIwMjM1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTViNWU4OGNlMDJhOGVhM2RmZjU4YjhiNDJmYzFhMzE2NTlhMDExNmM4NDdmYTJlMTAyZTNlZThkZWI2MDMxZjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.kgZHH3jrgQ4F1SFxdD3ybYDxqL9DmnPTHX6TX2SfY20',
-		},
-	];
+	const firstTwoProjects = projects.slice(0, 2);
 
 	const hackathonProjects: Project[] = [
 		{
@@ -74,7 +55,7 @@
 	<h2 class="section-label">Blog</h2>
 	<div class="flex gap-4">
 		<div
-			class="rounded-lg border-2 border-stone-200 border-dashed w-full flex justify-center p-4 text-xl"
+			class="rounded-lg border-2 border-stone-200 border-dashed w-full flex justify-center p-4 text-sm md:text-xl"
 		>
 			🚧 This section is under construction! 🚧
 		</div>
@@ -85,15 +66,15 @@
 		<h2 class="section-label">Projects</h2>
 		<!-- <ArrowButton>More</ArrowButton> -->
 	</div>
-	<div class="flex gap-4">
-		{#each projects as project}
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+		{#each firstTwoProjects as project}
 			<ProjectCard {project} />
 		{/each}
 	</div>
 </section>
 <section class="home-section text-stone-700 space-y-1 md:space-y-4">
 	<h2 class="section-label">Hackathon Wins</h2>
-	<div class="flex gap-4 max-w-full">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
 		{#each hackathonProjects as project}
 			<ProjectCard {project} />
 		{/each}

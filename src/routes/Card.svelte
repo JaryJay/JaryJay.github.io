@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class={'flex flex-col rounded-md sm:rounded-lg md:rounded-2xl shadow-md md:shadow-lg bg-white p-4 w-60 sm:w-96 md:w-[36rem] ' +
+	class={'flex flex-col rounded-md sm:rounded-lg md:rounded-2xl shadow-md md:shadow-lg bg-white p-4 ' +
 		$$props.class}
 >
 	<slot>

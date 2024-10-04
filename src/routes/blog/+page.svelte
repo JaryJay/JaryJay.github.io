@@ -1,5 +1,5 @@
 <script>
-	import LineDecoration from '../../components/LineDecoration.svelte';
+	import LineDecoration from '@/components/LineDecoration.svelte';
 </script>
 
 <svelte:head>

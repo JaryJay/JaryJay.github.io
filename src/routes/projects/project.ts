@@ -5,3 +5,28 @@ export interface Project {
 	githubLink?: string;
 	imageUrl: string;
 }
+
+export const projects: Project[] = [
+	{
+		name: 'Spring Dynasty',
+		description:
+			"A real-time strategy game where you command an army of squads to battle against up to 5 other players. It's built with Godot 4.2!\nSpring Dynasty offers a singleplayer campaign and a multiplayer free-for-all experience.",
+		githubLink: 'https://github.com/JaryJay/spring-dynasty',
+		imageUrl: '/projects/spring-dynasty/image.png',
+	},
+	{
+		name: 'Facebook Bot',
+		description:
+			'A desktop app that automatically scrapes Facebook Marketplace for deals.\nBuilt with Electron, Typescript, Vue.js, Selenium, and TailwindCSS!',
+		githubLink: 'https://github.com/JaryJay/facebook-bot',
+		imageUrl: '/projects/facebook-bot/image.png',
+	},
+	{
+		name: 'TTRPG command-line tool',
+		description:
+			'A command-line tool for DMs to manage tabletop role-playing games, made in plain Java.',
+		githubLink: 'https://github.com/JaryJay/jaryjay-sharnon',
+		imageUrl:
+			'https://raw.githubusercontent.com/JaryJay/jaryjay-sharnon/main/screenshots/screenshot2.png',
+	},
+]

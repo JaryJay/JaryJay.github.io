@@ -5,7 +5,7 @@
 	export let project: Project;
 </script>
 
-<Card class="flex flex-col gap-1 md:gap-2">
+<Card class={'flex flex-col gap-1 md:gap-2 ' + $$props.class}>
 	<img
 		src={project.imageUrl}
 		alt={'Image representing ' + project.name}
