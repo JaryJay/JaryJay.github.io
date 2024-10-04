@@ -34,7 +34,7 @@
 			{#if project.devpostLink}
 				<a href={project.devpostLink} on:click|stopPropagation>
 					<span
-						class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
+						class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
 						data-icon="mdi:code-tags"
 						data-inline="false"
 					></span>
@@ -43,7 +43,7 @@
 			{#if project.githubLink}
 				<a href={project.githubLink} on:click|stopPropagation>
 					<span
-						class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
+						class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
 						data-icon="mdi:github"
 						data-inline="false"
 					></span>
@@ -68,7 +68,7 @@
 				{#if project.devpostLink}
 					<a href={project.devpostLink} on:click|stopPropagation>
 						<span
-							class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
+							class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
 							data-icon="mdi:code-tags"
 							data-inline="false"
 						/>
@@ -77,7 +77,7 @@
 				{#if project.githubLink}
 					<a href={project.githubLink}>
 						<span
-							class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
+							class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
 							data-icon="mdi:github"
 							data-inline="false"
 						></span>
@@ -96,7 +96,7 @@
 						<img
 							src={imageUrl}
 							alt={`Image ${i + 1} representing ${project.name}`}
-							class="rounded-md pointer-events-none aspect-ratio"
+							class="rounded-md aspect-ratio"
 						/>
 					</CarouselItem>
 				{/each}
