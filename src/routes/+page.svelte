@@ -25,6 +25,7 @@
 			githubLink: 'https://github.com/Dissonant101/htn-23',
 			imageUrls: [
 				'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/591/793/datas/gallery.jpg',
+				'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/592/105/datas/gallery.jpg',
 			],
 		},
 		{
@@ -35,6 +36,19 @@
 			githubLink: 'https://github.com/Dissonant101/hermitrade',
 			imageUrls: [
 				'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/791/datas/gallery.jpg',
+				'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/796/datas/gallery.jpg',
+				'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/902/datas/gallery.jpg',
+			],
+		},
+		{
+			name: 'Lost In Gravity',
+			description:
+				'A gravity-bending, grenade-slinging horror game where you navigate a maze and destroy robots.\nMade in Unity, and won 2nd place out of 28 teams.',
+			devpostLink: 'https://devpost.com/software/lost-in-gravity',
+			playLink: 'https://play.unity.com/mg/other/webgl-builds-216024',
+			imageUrls: [
+				'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/021/947/datas/gallery.jpg',
+				'./projects/lost-in-gravity/image2.png',
 			],
 		},
 	];

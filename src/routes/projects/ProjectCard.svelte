@@ -13,6 +13,8 @@
 	import CarouselContent from '@/lib/components/ui/carousel/carousel-content.svelte';
 	import CarouselItem from '@/lib/components/ui/carousel/carousel-item.svelte';
 	import { Next, Previous } from '@/lib/components/ui/carousel';
+	import Code from 'lucide-svelte/icons/code';
+	import Play from 'lucide-svelte/icons/play';
 
 	export let project: Project;
 	let open = false;
@@ -32,21 +34,22 @@
 		<h4 class="text-sm font-semibold sm:text-base md:text-lg">{project.name}</h4>
 		<div class="flex gap-2">
 			{#if project.devpostLink}
-				<a href={project.devpostLink} on:click|stopPropagation>
-					<span
-						class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
-						data-icon="mdi:code-tags"
-						data-inline="false"
-					></span>
+				<a href={project.devpostLink} on:click|stopPropagation target="__blank">
+					<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
 				</a>
 			{/if}
 			{#if project.githubLink}
-				<a href={project.githubLink} on:click|stopPropagation>
+				<a href={project.githubLink} on:click|stopPropagation target="__blank">
 					<span
 						class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
 						data-icon="mdi:github"
 						data-inline="false"
 					></span>
+				</a>
+			{/if}
+			{#if project.playLink}
+				<a href={project.playLink} on:click|stopPropagation target="__blank">
+					<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
 				</a>
 			{/if}
 		</div>
@@ -66,21 +69,22 @@
 			<DrawerTitle class="flex items-center gap-2">
 				{project.name}
 				{#if project.devpostLink}
-					<a href={project.devpostLink} on:click|stopPropagation>
-						<span
-							class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
-							data-icon="mdi:code-tags"
-							data-inline="false"
-						/>
+					<a href={project.devpostLink} on:click|stopPropagation target="__blank">
+						<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
 					</a>
 				{/if}
 				{#if project.githubLink}
-					<a href={project.githubLink}>
+					<a href={project.githubLink} on:click|stopPropagation target="__blank">
 						<span
 							class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
 							data-icon="mdi:github"
 							data-inline="false"
 						></span>
+					</a>
+				{/if}
+				{#if project.playLink}
+					<a href={project.playLink} on:click|stopPropagation target="__blank">
+						<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
 					</a>
 				{/if}
 			</DrawerTitle>
@@ -92,7 +96,7 @@
 		<Carousel class="px-4 pb-4 mx-auto">
 			<CarouselContent>
 				{#each project.imageUrls as imageUrl, i (i)}
-					<CarouselItem class="basis-full sm:basis-1/2">
+					<CarouselItem class={cn('basis-full md:basis-1/2')}>
 						<img
 							src={imageUrl}
 							alt={`Image ${i + 1} representing ${project.name}`}

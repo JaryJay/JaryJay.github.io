@@ -3,6 +3,7 @@ export interface Project {
 	description: string;
 	devpostLink?: string;
 	githubLink?: string;
+	playLink?: string;
 	imageUrls: string[];
 }
 
