@@ -2,8 +2,17 @@
 	import { cn } from '@/lib/utils';
 	import Card from '../Card.svelte';
 	import type { Project } from './project';
-	import ResponsiveDialog from '@/lib/components/ui/ResponsiveDialog.svelte';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import {
+		Drawer,
+		DrawerContent,
+		DrawerTitle,
+		DrawerDescription,
+		DrawerHeader,
+	} from '$lib/components/ui/drawer/index.js';
+	import Carousel from '@/lib/components/ui/carousel/carousel.svelte';
+	import CarouselContent from '@/lib/components/ui/carousel/carousel-content.svelte';
+	import CarouselItem from '@/lib/components/ui/carousel/carousel-item.svelte';
+	import { Next, Previous } from '@/lib/components/ui/carousel';
 
 	export let project: Project;
 	let open = false;
@@ -15,26 +24,26 @@
 	on:click={() => (open = !open)}
 >
 	<img
-		src={project.imageUrl}
+		src={project.imageUrls[0]}
 		alt={'Image representing ' + project.name}
-		class="object-cover rounded-md aspect-ratio h-24 sm:h-36 md:h-48 lg:h-56 pointer-events-none"
+		class="object-cover h-24 rounded-md pointer-events-none aspect-ratio sm:h-36 md:h-48 lg:h-56"
 	/>
-	<div class="flex justify-between items-center">
-		<h4 class="text-sm sm:text-base md:text-lg font-semibold">{project.name}</h4>
+	<div class="flex items-center justify-between">
+		<h4 class="text-sm font-semibold sm:text-base md:text-lg">{project.name}</h4>
 		<div class="flex gap-2">
 			{#if project.devpostLink}
-				<a href={project.devpostLink}>
+				<a href={project.devpostLink} on:click|stopPropagation>
 					<span
-						class="iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800 transition-colors"
+						class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
 						data-icon="mdi:code-tags"
 						data-inline="false"
 					></span>
 				</a>
 			{/if}
 			{#if project.githubLink}
-				<a href={project.githubLink}>
+				<a href={project.githubLink} on:click|stopPropagation>
 					<span
-						class="iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800 transition-colors"
+						class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
 						data-icon="mdi:github"
 						data-inline="false"
 					></span>
@@ -44,53 +53,58 @@
 	</div>
 	<div class="flex-1">
 		<p
-			class="text-stone-600 text-sm sm:text-base md:text-lg line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-ellipsis whitespace-pre-line"
+			class="text-sm whitespace-pre-line text-stone-600 sm:text-base md:text-lg line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-ellipsis"
 		>
 			{project.description}
 		</p>
 	</div>
 </Card>
 
-<ResponsiveDialog bind:open>
-	<Drawer.Header class="text-left" slot="header">
-		<Drawer.Title>{project.name}</Drawer.Title>
-		<Drawer.Description>
-			{project.description}
-		</Drawer.Description>
-	</Drawer.Header>
-	<div class="p-4 md:p-0 flex flex-col gap-1 md:gap-2">
-		<div class="hidden md:flex justify-between items-center">
-			<h4 class="text-sm sm:text-base md:text-lg font-semibold">{project.name}</h4>
-			<div class="flex gap-2">
+<Drawer bind:open>
+	<DrawerContent>
+		<DrawerHeader class="text-left">
+			<DrawerTitle class="flex items-center gap-2">
+				{project.name}
 				{#if project.devpostLink}
-					<a href={project.devpostLink}>
+					<a href={project.devpostLink} on:click|stopPropagation>
 						<span
-							class="iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800 transition-colors"
+							class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
 							data-icon="mdi:code-tags"
 							data-inline="false"
-						></span>
+						/>
 					</a>
 				{/if}
 				{#if project.githubLink}
 					<a href={project.githubLink}>
 						<span
-							class="iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800 transition-colors"
+							class="transition-colors iconify size-4 sm:size-5 md:size-6 text-stone-600 hover:text-stone-800"
 							data-icon="mdi:github"
 							data-inline="false"
 						></span>
 					</a>
 				{/if}
-			</div>
-		</div>
-		<img
-			src={project.imageUrl}
-			alt={'Image representing ' + project.name}
-			class="object-cover rounded-md aspect-ratio pointer-events-none"
-		/>
-		<div class="flex-1 hidden md:block">
-			<p class="text-stone-600 text-sm sm:text-base md:text-lg whitespace-pre-line">
+			</DrawerTitle>
+			<DrawerDescription>
 				{project.description}
-			</p>
-		</div>
-	</div>
-</ResponsiveDialog>
+			</DrawerDescription>
+		</DrawerHeader>
+
+		<Carousel class="px-4 pb-4 mx-auto">
+			<CarouselContent>
+				{#each project.imageUrls as imageUrl, i (i)}
+					<CarouselItem class="basis-full sm:basis-1/2">
+						<img
+							src={imageUrl}
+							alt={`Image ${i + 1} representing ${project.name}`}
+							class="rounded-md pointer-events-none aspect-ratio"
+						/>
+					</CarouselItem>
+				{/each}
+			</CarouselContent>
+			{#if project.imageUrls.length > 1}
+				<Previous />
+				<Next />
+			{/if}
+		</Carousel>
+	</DrawerContent>
+</Drawer>
