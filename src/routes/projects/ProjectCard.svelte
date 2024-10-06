@@ -65,50 +65,52 @@
 
 <Drawer bind:open>
 	<DrawerContent>
-		<DrawerHeader class="text-left">
-			<DrawerTitle class="flex items-center gap-2">
-				{project.name}
-				{#if project.devpostLink}
-					<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-						<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
-					</a>
-				{/if}
-				{#if project.githubLink}
-					<a href={project.githubLink} on:click|stopPropagation target="__blank">
-						<span
-							class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
-							data-icon="mdi:github"
-							data-inline="false"
-						></span>
-					</a>
-				{/if}
-				{#if project.playLink}
-					<a href={project.playLink} on:click|stopPropagation target="__blank">
-						<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
-					</a>
-				{/if}
-			</DrawerTitle>
-			<DrawerDescription>
-				{project.description}
-			</DrawerDescription>
-		</DrawerHeader>
+		<div class="max-w-md md:max-w-2xl mx-auto">
+			<DrawerHeader class="text-left">
+				<DrawerTitle class="flex items-center gap-2">
+					{project.name}
+					{#if project.devpostLink}
+						<a href={project.devpostLink} on:click|stopPropagation target="__blank">
+							<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+						</a>
+					{/if}
+					{#if project.githubLink}
+						<a href={project.githubLink} on:click|stopPropagation target="__blank">
+							<span
+								class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
+								data-icon="mdi:github"
+								data-inline="false"
+							></span>
+						</a>
+					{/if}
+					{#if project.playLink}
+						<a href={project.playLink} on:click|stopPropagation target="__blank">
+							<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+						</a>
+					{/if}
+				</DrawerTitle>
+				<DrawerDescription>
+					{project.description}
+				</DrawerDescription>
+			</DrawerHeader>
 
-		<Carousel class="px-4 pb-4 mx-auto">
-			<CarouselContent>
-				{#each project.imageUrls as imageUrl, i (i)}
-					<CarouselItem class={cn('basis-full md:basis-1/2')}>
-						<img
-							src={imageUrl}
-							alt={`Image ${i + 1} representing ${project.name}`}
-							class="rounded-md aspect-ratio"
-						/>
-					</CarouselItem>
-				{/each}
-			</CarouselContent>
-			{#if project.imageUrls.length > 1}
-				<Previous />
-				<Next />
-			{/if}
-		</Carousel>
+			<Carousel class="px-4 pb-4 mx-auto" data-vaul-no-drag>
+				<CarouselContent>
+					{#each project.imageUrls as imageUrl, i (i)}
+						<CarouselItem class={cn('basis-full md:basis-1/2')}>
+							<img
+								src={imageUrl}
+								alt={`Image ${i + 1} representing ${project.name}`}
+								class="rounded-md aspect-ratio"
+							/>
+						</CarouselItem>
+					{/each}
+				</CarouselContent>
+				{#if project.imageUrls.length > 1}
+					<Previous />
+					<Next />
+				{/if}
+			</Carousel>
+		</div>
 	</DrawerContent>
 </Drawer>
