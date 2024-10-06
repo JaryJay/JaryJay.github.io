@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import DarkModeToggle from '@/components/DarkModeToggle.svelte';
 
 	type Route = {
 		route: string;
@@ -27,7 +28,7 @@
 		</ul>
 	</nav>
 	<div class="flex px-4 gap-4 md:gap-8">
-		<!-- Put some links here (e.g. GitHub) -->
+		<!-- <DarkModeToggle /> -->
 	</div>
 </header>
 

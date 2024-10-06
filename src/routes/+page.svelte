@@ -63,8 +63,8 @@
 
 <section class="home-section">
 	<div class="space-y-1 md:space-y-4">
-		<h1 class="text-3xl font-semibold sm:text-4xl md:text-6xl text-stone-700">Jay Ren</h1>
-		<h3 class="text-lg font-semibold sm:text-xl md:text-2xl text-stone-400">Software Developer</h3>
+		<h1 class="text-stone-700 font-semibold">Jay Ren</h1>
+		<h4 class="text-muted-foreground">Software Developer</h4>
 	</div>
 </section>
 <LineDecoration class="absolute transform rotate-2" />
@@ -81,7 +81,7 @@
 </section> -->
 <section class="space-y-1 home-section text-stone-700 md:space-y-4">
 	<div class="flex items-center gap-4">
-		<h2 class="section-label">Projects</h2>
+		<h3 class="section-label">Projects</h3>
 		<!-- <ArrowButton>More</ArrowButton> -->
 	</div>
 	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
@@ -96,7 +96,7 @@
 	</Button>
 </section>
 <section class="space-y-1 home-section text-stone-700 md:space-y-4">
-	<h2 class="section-label">Hackathon Wins</h2>
+	<h3 class="section-label">Hackathon Wins</h3>
 	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
 		{#each hackathonProjects as project}
 			<ProjectCard {project} />
