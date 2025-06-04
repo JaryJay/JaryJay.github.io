@@ -9,6 +9,16 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		name: 'Chess Roguelike',
+		description:
+			"A procedurally generated chess dungeon crawler mobile game with upgrades and progression.\nComing soon to Google Play and the App Store!\nIt's built with Godot 4.4. It uses an in-house AI inspired\n If you want to try out the alpha, please contact me -- you will need to provide your email.\n\nP.S. The game has no ads, because I never bothered to add them.",
+		githubLink: 'https://github.com/JaryJay/chess-roguelike',
+		imageUrls: [
+			'/projects/chess-roguelike/faction-select.png',
+			'/projects/chess-roguelike/gameplay.png',
+		],
+	},
+	{
 		name: 'Spring Dynasty',
 		description:
 			"A real-time strategy game where you command an army of squads to battle against up to 5 other players. It's built with Godot 4.2!\nSpring Dynasty offers a singleplayer campaign and a multiplayer free-for-all experience.",
@@ -18,6 +28,13 @@ export const projects: Project[] = [
 			'/projects/spring-dynasty/image2.png',
 			'/projects/spring-dynasty/image3.png',
 		],
+	},
+	{
+		name: 'Personal Website',
+		description:
+			"This site that you're looking at right now!\nBuilt with Svelte, ShadCN, and TailwindCSS.\nIt's a static website hosted with GitHub Pages.",
+		githubLink: 'https://github.com/JaryJay/JaryJay.github.io',
+		imageUrls: ['/projects/JaryJay.github.io/image.png'],
 	},
 	{
 		name: 'Facebook Bot',

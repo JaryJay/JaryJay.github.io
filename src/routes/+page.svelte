@@ -81,7 +81,7 @@
 </section> -->
 <section class="space-y-1 home-section text-stone-700 md:space-y-4">
 	<div class="flex items-center gap-4">
-		<h3 class="section-label">Projects</h3>
+		<h3 class="section-label pb-2">Projects</h3>
 		<!-- <ArrowButton>More</ArrowButton> -->
 	</div>
 	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
@@ -96,7 +96,7 @@
 	</Button>
 </section>
 <section class="space-y-1 home-section text-stone-700 md:space-y-4">
-	<h3 class="section-label">Hackathon Wins</h3>
+	<h3 class="section-label pb-2">Hackathon Wins</h3>
 	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
 		{#each hackathonProjects as project}
 			<ProjectCard {project} />
