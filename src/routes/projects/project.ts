@@ -9,6 +9,15 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		name: 'Sentir',
+		description:
+			"An AI autocomplete Chrome extension for every input field.\nIt's built with React, and runs on Gemini 2.0 Flash.\n\nIt's still a work in progress, but you can watch the GitHub repo for updates!",
+		githubLink: 'https://github.com/JaryJay/sentir',
+		imageUrls: [
+			'/projects/sentir/image.png',
+		],
+	},
+	{
 		name: 'Chess Roguelike',
 		description:
 			"A procedurally generated chess dungeon crawler mobile game with upgrades and progression.\nComing soon to Google Play and the App Store!\nIt's built with Godot 4.4. It uses an in-house AI inspired\n If you want to try out the alpha, please contact me -- you will need to provide your email.\n\nP.S. The game has no ads, because I never bothered to add them.",
