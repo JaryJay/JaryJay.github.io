@@ -88,6 +88,7 @@
 		</p>
 		<p>Winter 2025: Software engineering intern @ ETHGlobal. Built a GitHub integration with TypeScript used by 6,400+ developers.</p>
 		<p>Summer 2024: Software developer intern @ LavaReach (now acquired), an early-stage B2B startup based in Toronto.</p>
+		<p>Summer 2022: Full-stack developer intern @ Nokia. Worked on an order-tracking system for Nokia's supply chain.</p>
 	</div>
 </section>
 <section class="space-y-1 home-section text-stone-700 md:space-y-4">
