@@ -80,6 +80,17 @@
 	</div>
 </section> -->
 <section class="space-y-1 home-section text-stone-700 md:space-y-4">
+	<h3 class="section-label pb-2">Experience</h3>
+	<div class="text-sm md:text-base text-stone-600">
+		<p>
+			Fall 2025: Software engineer intern @ Huawei. I'm working on the deep learning compiler team, building a LLVM/MLIR-based compiler for neural network inference on
+			custom hardware.
+		</p>
+		<p>Winter 2025: Software engineering intern @ ETHGlobal. Built a GitHub integration with TypeScript used by 6,400+ developers.</p>
+		<p>Summer 2024: Software developer intern @ LavaReach (now acquired), an early-stage B2B startup based in Toronto.</p>
+	</div>
+</section>
+<section class="space-y-1 home-section text-stone-700 md:space-y-4">
 	<div class="flex items-center gap-4">
 		<h3 class="section-label pb-2">Projects</h3>
 		<!-- <ArrowButton>More</ArrowButton> -->
