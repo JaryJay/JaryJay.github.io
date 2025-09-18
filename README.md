@@ -4,6 +4,10 @@ This is my personal website.
 
 ## Developing
 
+> [!NOTE]
+> The following instructions use `npm`. However, almost all of them work with `pnpm`, `yarn`, `bun`, etc. 
+Simply replace `npm` with your preferred package manager, and voila!
+
 Once you've installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
@@ -23,4 +27,9 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Deployment
+
+This site is deployed on GitHub pages. To deploy the latest changes, run
+```bash
+npm run deploy
+```
