@@ -25,8 +25,9 @@
 		<h4 class="text-muted-foreground">{chosenQuip}&nbsp;</h4>
 	</div>
 </section>
+<div class="py-2 sm:py-1" />
 <LineDecoration class="absolute transform rotate-2" />
-<div class="pb-4" />
+<div class="py-2 sm:hidden" />
 <section class="space-y-1 home-section md:space-y-4">
 	<h3 id="experience" class="section-label">Experience</h3>
 	<div class="text-sm md:text-base text-foreground">

@@ -14,7 +14,9 @@
 	];
 </script>
 
-<header class="mx-auto max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl flex justify-between py-2">
+<header
+	class="mx-auto max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl flex justify-between items-center py-2"
+>
 	<nav>
 		<ul class="flex px-4 gap-4 md:gap-8">
 			{#each routes as { route, name }, i}
