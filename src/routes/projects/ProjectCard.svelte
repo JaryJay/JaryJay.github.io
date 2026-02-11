@@ -26,7 +26,7 @@
 
 <Card
 	class={cn(
-		'flex flex-col gap-1 md:gap-2 outline outline-2 outline-white hover:outline-gray-500 transition-[outline] duration-200',
+		'bg-card text-card-foreground flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-primary transition-[outline] duration-200',
 		$$props.class,
 	)}
 	slot="trigger"
@@ -38,32 +38,31 @@
 		class="object-cover h-30 rounded-md pointer-events-none aspect-ratio sm:h-36 md:h-48 lg:h-56"
 	/>
 	<div class="flex items-center justify-between">
-		<h4 class="text-sm font-semibold sm:text-base md:text-lg">{project.name}</h4>
+		<h4 class="text-sm font-semibold sm:text-base md:text-lg">
+			{project.name}
+		</h4>
 		<div class="flex gap-2">
 			{#if project.devpostLink}
 				<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-					<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+					<Code class="transition-colors size-6" />
 				</a>
 			{/if}
 			{#if project.githubLink}
 				<a href={project.githubLink} on:click|stopPropagation target="__blank">
-					<span
-						class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
-						data-icon="mdi:github"
-						data-inline="false"
+					<span class="transition-colors iconify size-6" data-icon="mdi:github" data-inline="false"
 					></span>
 				</a>
 			{/if}
 			{#if project.playLink}
 				<a href={project.playLink} on:click|stopPropagation target="__blank">
-					<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+					<Play class="transition-colors size-6" />
 				</a>
 			{/if}
 		</div>
 	</div>
 	<div class="flex-1">
 		<p
-			class="text-sm whitespace-pre-line text-stone-600 sm:text-base md:text-lg line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-ellipsis"
+			class="text-sm whitespace-pre-line sm:text-base md:text-lg line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-ellipsis"
 		>
 			{project.description}
 		</p>
@@ -72,19 +71,19 @@
 
 {#if $isDesktop}
 	<Dialog.Root bind:open>
-		<Dialog.Content class="max-w-4xl lg:max-w-5xl">
+		<Dialog.Content class="max-w-4xl lg:max-w-5xl bg-card text-card-foreground">
 			<Dialog.Header>
 				<Dialog.Title class="flex gap-2 items-center">
 					{project.name}
 					{#if project.devpostLink}
 						<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-							<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+							<Code class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 						</a>
 					{/if}
 					{#if project.githubLink}
 						<a href={project.githubLink} on:click|stopPropagation target="__blank">
 							<span
-								class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
+								class="transition-colors iconify size-6 text-opacity-80 hover:text-opacity-100"
 								data-icon="mdi:github"
 								data-inline="false"
 							></span>
@@ -92,7 +91,7 @@
 					{/if}
 					{#if project.playLink}
 						<a href={project.playLink} on:click|stopPropagation target="__blank">
-							<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+							<Play class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 						</a>
 					{/if}
 				</Dialog.Title>
@@ -128,13 +127,13 @@
 						{project.name}
 						{#if project.devpostLink}
 							<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-								<Code class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+								<Code class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 							</a>
 						{/if}
 						{#if project.githubLink}
 							<a href={project.githubLink} on:click|stopPropagation target="__blank">
 								<span
-									class="transition-colors iconify size-6 text-stone-600 hover:text-stone-800"
+									class="transition-colors iconify size-6 text-opacity-80 hover:text-opacity-100"
 									data-icon="mdi:github"
 									data-inline="false"
 								></span>
@@ -142,7 +141,7 @@
 						{/if}
 						{#if project.playLink}
 							<a href={project.playLink} on:click|stopPropagation target="__blank">
-								<Play class="transition-colors size-6 text-stone-600 hover:text-stone-800" />
+								<Play class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 							</a>
 						{/if}
 					</DrawerTitle>

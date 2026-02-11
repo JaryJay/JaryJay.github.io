@@ -4,9 +4,9 @@
 	import ProjectCard from './ProjectCard.svelte';
 </script>
 
-<section class="home-section text-stone-700 space-y-1 md:space-y-4">
+<section class="home-section space-y-1 md:space-y-4">
 	<div class="flex gap-4 items-center">
-		<h3 class="section-label pb-2">Projects</h3>
+		<h3 class="section-label">Projects</h3>
 		<!-- <ArrowButton>More</ArrowButton> -->
 	</div>
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">

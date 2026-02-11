@@ -20,7 +20,7 @@
 			{#each routes as { route, name }, i}
 				<li
 					aria-current={$page.url.pathname === route ? 'page' : undefined}
-					class="font-semibold py-1 md:py-2 text-stone-700 text-sm md:text-base group"
+					class="font-semibold py-1 md:py-2 text-foreground text-sm md:text-base group"
 				>
 					<a href={route} class="underline-animation relative">{name}</a>
 				</li>
@@ -28,7 +28,7 @@
 		</ul>
 	</nav>
 	<div class="flex px-4 gap-4 md:gap-8">
-		<!-- <DarkModeToggle /> -->
+		<DarkModeToggle />
 	</div>
 </header>
 
@@ -39,7 +39,7 @@
 
 	.underline-animation::after {
 		content: '';
-		@apply absolute left-0 bottom-0 w-full h-[1px] bg-current scale-x-0 transition-transform duration-300 ease-in-out;
+		@apply absolute left-0 bottom-0 w-full h-[1px] bg-current scale-x-0 transition-transform duration-100 ease-in-out;
 	}
 
 	.group:hover .underline-animation::after {
