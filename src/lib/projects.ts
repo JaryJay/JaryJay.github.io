@@ -13,9 +13,7 @@ export const projects: Project[] = [
 		description:
 			"An AI autocomplete Chrome extension for every input field.\nIt's built with React, and runs on Gemini 2.0 Flash.\n\nIt's still a work in progress, but you can watch the GitHub repo for updates!",
 		githubLink: 'https://github.com/JaryJay/sentir',
-		imageUrls: [
-			'/projects/sentir/image.png',
-		],
+		imageUrls: ['/projects/sentir/image.png'],
 	},
 	{
 		name: 'Chess Roguelike',
@@ -67,6 +65,43 @@ export const projects: Project[] = [
 		githubLink: 'https://github.com/JaryJay/jaryjay-sharnon',
 		imageUrls: [
 			'https://raw.githubusercontent.com/JaryJay/jaryjay-sharnon/main/screenshots/screenshot2.png',
+		],
+	},
+];
+
+export const hackathonProjects: Project[] = [
+	{
+		name: 'Robotany',
+		description:
+			'A smart, remote-controlled, NLP-powered flowerpot that my team and I made for Hack the North 2023. We were one of the finalists -- the top 12 out of 250 teams!',
+		devpostLink: 'https://devpost.com/software/the-plant-whisperer',
+		githubLink: 'https://github.com/Dissonant101/htn-23',
+		imageUrls: [
+			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/591/793/datas/gallery.jpg',
+			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/592/105/datas/gallery.jpg',
+		],
+	},
+	{
+		name: 'Hermitrade',
+		description:
+			'An ethereum-based second-hand electronics marketplace made with React, Typescript and Solidity. This project, which I worked on with 3 other cool people, won 2 prizes 🏆 at JamHacks 2022!',
+		devpostLink: 'https://devpost.com/software/hermitrade',
+		githubLink: 'https://github.com/Dissonant101/hermitrade',
+		imageUrls: [
+			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/791/datas/gallery.jpg',
+			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/796/datas/gallery.jpg',
+			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/902/datas/gallery.jpg',
+		],
+	},
+	{
+		name: 'Lost In Gravity',
+		description:
+			'A gravity-bending, grenade-slinging horror game where you navigate a maze and destroy robots.\nMade in Unity, and won 2nd place out of 28 teams.',
+		devpostLink: 'https://devpost.com/software/lost-in-gravity',
+		playLink: 'https://play.unity.com/mg/other/webgl-builds-216024',
+		imageUrls: [
+			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/021/947/datas/gallery.jpg',
+			'./projects/lost-in-gravity/image2.png',
 		],
 	},
 ];

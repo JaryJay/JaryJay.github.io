@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { mediaQuery } from 'svelte-legos';
 	import { cn } from '@/lib/utils';
-	import Card from '../Card.svelte';
-	import type { Project } from './project';
+	import Card from './Card.svelte';
+	import type { Project } from '../projects';
 	import * as Dialog from '@/lib/components/ui/dialog';
 	import {
 		Drawer,

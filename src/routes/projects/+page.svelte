@@ -1,7 +1,7 @@
 <script lang="ts">
 	import LineDecoration from '../../components/LineDecoration.svelte';
-	import { projects } from './project';
-	import ProjectCard from './ProjectCard.svelte';
+	import { projects } from '../../lib/projects';
+	import ProjectCard from '../../lib/components/ProjectCard.svelte';
 </script>
 
 <section class="home-section space-y-1 md:space-y-4">
