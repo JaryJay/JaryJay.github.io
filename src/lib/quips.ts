@@ -5,7 +5,6 @@ export const quips = [
 	"I'm going to regret putting random quotes here",
 	'In student debt @ University of Waterloo.',
 	'Pivoted into AI because money.',
-	'TODO: add buzzwords here',
 	'Buy high, sell low',
 	'I <3 Svelte',
 ];

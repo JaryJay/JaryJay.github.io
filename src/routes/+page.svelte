@@ -6,10 +6,12 @@
 	import ProjectCard from '@/lib/components/ProjectCard.svelte';
 	import Button from '@/lib/components/ui/button/button.svelte';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
+	import { onMount } from 'svelte';
 
 	const firstTwoProjects = projects.slice(0, 2);
 
-	const chosenQuip = quips[Math.floor(Math.random() * quips.length)];
+	let chosenQuip = '';
+	onMount(() => (chosenQuip = quips[Math.floor(Math.random() * quips.length)]));
 </script>
 
 <svelte:head>
@@ -20,7 +22,7 @@
 <section class="home-section">
 	<div class="space-y-1 md:space-y-4">
 		<h1 class="text-foreground font-semibold">Jay Ren</h1>
-		<h4 class="text-muted-foreground">{chosenQuip}</h4>
+		<h4 class="text-muted-foreground">{chosenQuip}&nbsp;</h4>
 	</div>
 </section>
 <LineDecoration class="absolute transform rotate-2" />
