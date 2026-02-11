@@ -103,11 +103,11 @@
 			<Carousel class="mx-auto" data-vaul-no-drag>
 				<CarouselContent>
 					{#each project.imageUrls as imageUrl, i (i)}
-						<CarouselItem class={cn('basis-full')}>
+						<CarouselItem class="flex items-center justify-center">
 							<img
 								src={imageUrl}
 								alt={`Image ${i + 1} representing ${project.name}`}
-								class="rounded-md aspect-ratio"
+								class="rounded-md m-auto object-contain max-h-[65vh]"
 							/>
 						</CarouselItem>
 					{/each}
