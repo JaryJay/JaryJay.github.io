@@ -1,14 +1,15 @@
 <script lang="ts">
-	import LineDecoration from '@/components/LineDecoration.svelte';
+	import { experiences } from '@/lib/experiences';
 	import { projects, hackathonProjects } from '@/lib/projects';
+	import { quips } from '@/lib/quips';
+	import LineDecoration from '@/components/LineDecoration.svelte';
 	import ProjectCard from '@/lib/components/ProjectCard.svelte';
 	import Button from '@/lib/components/ui/button/button.svelte';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
-	import { experiences } from '@/lib/experiences';
 
 	const firstTwoProjects = projects.slice(0, 2);
 
-	];
+	const chosenQuip = quips[Math.floor(Math.random() * quips.length)];
 </script>
 
 <svelte:head>
@@ -19,21 +20,11 @@
 <section class="home-section">
 	<div class="space-y-1 md:space-y-4">
 		<h1 class="text-foreground font-semibold">Jay Ren</h1>
-		<h4 class="text-muted-foreground">Software Developer</h4>
+		<h4 class="text-muted-foreground">{chosenQuip}</h4>
 	</div>
 </section>
 <LineDecoration class="absolute transform rotate-2" />
 <div class="pb-4" />
-<!-- <section class="space-y-1 home-section md:space-y-4">
-	<h2 class="section-label">Blog</h2>
-	<div class="flex gap-4">
-		<div
-			class="flex justify-center w-full p-4 text-sm border-2 border-dashed rounded-lg md:text-xl"
-		>
-			🚧 This section is under construction! 🚧
-		</div>
-	</div>
-</section> -->
 <section class="space-y-1 home-section md:space-y-4">
 	<h3 id="experience" class="section-label">Experience</h3>
 	<div class="text-sm md:text-base text-foreground">
