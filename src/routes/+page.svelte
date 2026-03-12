@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { experiences } from '@/lib/experiences';
-	import { projects, hackathonProjects } from '@/lib/projects';
-	import { quips } from '@/lib/quips';
+	import { experiences } from '$lib/experiences';
+	import { projects, hackathonProjects } from '$lib/projects';
+	import { quips } from '$lib/quips';
 	import LineDecoration from '@/components/LineDecoration.svelte';
-	import ProjectCard from '@/lib/components/ProjectCard.svelte';
-	import Button from '@/lib/components/ui/button/button.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
 	import { onMount } from 'svelte';
+	import VerticalSection from '$lib/components/VerticalSection.svelte';
+	import DynamicGrid from '$lib/components/DynamicGrid.svelte';
 
 	const firstTwoProjects = projects.slice(0, 2);
 
@@ -15,20 +17,18 @@
 </script>
 
 <svelte:head>
-	<title>Jay's Website</title>
+	<title>Jay Ren</title>
 	<meta name="description" content="Welcome to my personal website!" />
 </svelte:head>
 
-<section class="home-section">
-	<div class="space-y-1 md:space-y-4">
-		<h1 class="text-foreground font-semibold">Jay Ren</h1>
-		<h4 class="text-muted-foreground">{chosenQuip}&nbsp;</h4>
-	</div>
-</section>
+<VerticalSection>
+	<h1 class="text-foreground font-semibold">Jay Ren</h1>
+	<h4 class="text-muted-foreground">{chosenQuip}&nbsp;</h4>
+</VerticalSection>
 <div class="py-2 sm:py-1" />
 <LineDecoration class="absolute transform rotate-2" />
 <div class="py-2 sm:hidden" />
-<section class="space-y-1 home-section md:space-y-4">
+<VerticalSection>
 	<h3 id="experience" class="section-label">Experience</h3>
 	<div class="text-sm md:text-base text-foreground">
 		{#each experiences as experience}
@@ -38,27 +38,27 @@
 			</p>
 		{/each}
 	</div>
-</section>
-<section class="space-y-1 home-section md:space-y-4">
+</VerticalSection>
+<VerticalSection>
 	<div class="flex items-center gap-4">
 		<h3 id="projects" class="section-label">Projects</h3>
 	</div>
-	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+	<DynamicGrid>
 		{#each firstTwoProjects as project}
 			<ProjectCard {project} />
 		{/each}
-	</div>
+	</DynamicGrid>
 	<Button variant="ghost">
 		<a href="/projects" class="flex gap-2 items-center">
 			See All <ChevronRight />
 		</a>
 	</Button>
-</section>
-<section class="space-y-1 home-section md:space-y-4">
+</VerticalSection>
+<VerticalSection>
 	<h3 id="hackathon-wins" class="section-label">Hackathon Wins</h3>
-	<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+	<DynamicGrid>
 		{#each hackathonProjects as project}
 			<ProjectCard {project} />
 		{/each}
-	</div>
-</section>
+	</DynamicGrid>
+</VerticalSection>

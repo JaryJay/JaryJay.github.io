@@ -39,16 +39,16 @@
 	.dark {
 		--background: 214 5% 13%;
 		--foreground: 60 9.1% 97.8%;
-
+		
 		--muted: 12 6.5% 15.1%;
 		--muted-foreground: 24 5.4% 63.9%;
-
+		
 		--popover: 20 14.3% 4.1%;
 		--popover-foreground: 60 9.1% 97.8%;
-
+		
 		--card: 214 5% 15%;
 		--card-foreground: 264 5%, 90%;
-
+		
 		--border: 12 6.5% 57%;
 		--input: 12 6.5% 15.1%;
 
@@ -114,4 +114,8 @@
 	.section-label {
 		@apply text-card-foreground pb-2;
 	}
+}
+
+html {
+  scrollbar-gutter: stable both-edges;
 }

@@ -81,18 +81,18 @@ export const hackathonProjects: Project[] = [
 			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/592/105/datas/gallery.jpg',
 		],
 	},
-	{
-		name: 'Hermitrade',
-		description:
-			'An ethereum-based second-hand electronics marketplace made with React, Typescript and Solidity. This project, which I worked on with 3 other cool people, won 2 prizes 🏆 at JamHacks 2022!',
-		devpostLink: 'https://devpost.com/software/hermitrade',
-		githubLink: 'https://github.com/Dissonant101/hermitrade',
-		imageUrls: [
-			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/791/datas/gallery.jpg',
-			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/796/datas/gallery.jpg',
-			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/902/datas/gallery.jpg',
-		],
-	},
+	// {
+	// 	name: 'Hermitrade',
+	// 	description:
+	// 		'An ethereum-based second-hand electronics marketplace made with React, Typescript and Solidity. This project, which I worked on with 3 other cool people, won 2 prizes 🏆 at JamHacks 2022!',
+	// 	devpostLink: 'https://devpost.com/software/hermitrade',
+	// 	githubLink: 'https://github.com/Dissonant101/hermitrade',
+	// 	imageUrls: [
+	// 		'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/791/datas/gallery.jpg',
+	// 		'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/796/datas/gallery.jpg',
+	// 		'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/986/902/datas/gallery.jpg',
+	// 	],
+	// },
 	{
 		name: 'Lost In Gravity',
 		description:

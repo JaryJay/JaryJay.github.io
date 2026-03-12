@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { mediaQuery } from 'svelte-legos';
-	import { cn } from '@/lib/utils';
+	import { cn } from '$lib/utils';
 	import Card from './Card.svelte';
 	import type { Project } from '../projects';
-	import * as Dialog from '@/lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog';
 	import {
 		Drawer,
 		DrawerContent,
@@ -15,8 +15,8 @@
 		Root as Carousel,
 		Content as CarouselContent,
 		Item as CarouselItem,
-	} from '@/lib/components/ui/carousel';
-	import { Next, Previous } from '@/lib/components/ui/carousel';
+	} from '$lib/components/ui/carousel';
+	import { Next, Previous } from '$lib/components/ui/carousel';
 	import Code from 'lucide-svelte/icons/code';
 	import Play from 'lucide-svelte/icons/play';
 	export let project: Project;

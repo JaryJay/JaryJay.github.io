@@ -2,17 +2,21 @@
 	import LineDecoration from '../../components/LineDecoration.svelte';
 	import { projects } from '../../lib/projects';
 	import ProjectCard from '../../lib/components/ProjectCard.svelte';
+	import VerticalSection from '$lib/components/VerticalSection.svelte';
+	import DynamicGrid from '@/lib/components/DynamicGrid.svelte';
 </script>
 
-<section class="home-section space-y-1 md:space-y-4">
-	<div class="flex gap-4 items-center">
-		<h3 class="section-label">Projects</h3>
-		<!-- <ArrowButton>More</ArrowButton> -->
-	</div>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<svelte:head>
+	<title>Jay's Projects</title>
+	<meta name="description" content="Welcome to Jay's projects page!" />
+</svelte:head>
+
+<VerticalSection>
+	<h3 class="section-label">Projects</h3>
+	<DynamicGrid>
 		{#each projects as project}
 			<ProjectCard {project} />
 		{/each}
-	</div>
-</section>
+	</DynamicGrid>
+</VerticalSection>
 <LineDecoration class="absolute transform rotate-2" />

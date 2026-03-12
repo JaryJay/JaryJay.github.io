@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Button from '@/lib/components/ui/button/button.svelte';
-	import { cn } from '@/lib/utils';
+	import { cn } from '$lib/utils';
 
 	export let title: string = '';
 	export let description: string = '';
