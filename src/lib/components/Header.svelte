@@ -8,7 +8,7 @@
 	};
 	const routes: Route[] = [
 		{ route: '/', name: 'HOME' },
-		// { route: '/blog', name: 'BLOG' },
+		{ route: '/blog', name: 'BLOG' },
 		{ route: '/projects', name: 'ALL PROJECTS' },
 		// { route: '/faith', name: 'FAITH' },
 	];
@@ -19,10 +19,10 @@
 >
 	<nav>
 		<ul class="flex px-4 gap-4 md:gap-8">
-			{#each routes as { route, name }, i}
+			{#each routes as { route, name } (name)}
 				<li
 					aria-current={$page.url.pathname === route ? 'page' : undefined}
-					class="font-semibold py-1 md:py-2 text-foreground text-sm md:text-base group"
+					class="font-semibold py-1 md:py-2 text-foreground text-sm md:text-base group list-none"
 				>
 					<a href={route} class="underline-animation relative">{name}</a>
 				</li>
