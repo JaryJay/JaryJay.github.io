@@ -4,7 +4,6 @@
 	import '../app.css';
 	import { ModeWatcher } from 'mode-watcher';
 	import { page } from '$app/stores';
-	import { fade } from 'svelte/transition';
 </script>
 
 <ModeWatcher />
@@ -12,7 +11,7 @@
 	<Header />
 
 	{#key $page.url.pathname}
-		<main in:fade={{ duration: 180, delay: 60 }} out:fade={{ duration: 120 }}>
+		<main>
 			<slot />
 		</main>
 	{/key}

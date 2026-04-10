@@ -1,8 +1,8 @@
 <script lang="ts">
-	import VerticalSection from '$lib/components/VerticalSection.svelte';
+	import FadeIn from '$lib/components/FadeIn.svelte';
+	import VerticalSection from "@/lib/components/VerticalSection.svelte";
 	import { blogPosts } from "$lib/blogPosts";
 	import { kebabCase } from "$lib/kebabCase";
-	import FadeIn from '$lib/components/FadeIn.svelte';
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
 	<div class="flex flex-col gap-4">
 		{#each blogPosts as post, i}
 			<FadeIn delay={i * 80}>
-				<a href={`/blog/${kebabCase(post.slug)}`} class="blog-card group block">
+				<a href={`/blog/${kebabCase(post.slug)}`} class="group block rounded-lg border border-border px-4 py-3 transition-all duration-150 hover:border-primary hover:bg-muted/30 hover:-translate-y-0.5 cursor-pointer">
 					<div class="flex items-start justify-between gap-4">
 						<h4 class="text-base font-semibold sm:text-lg group-hover:text-primary transition-colors">
 							{post.title}
@@ -30,9 +30,3 @@
 		{/each}
 	</div>
 </VerticalSection>
-
-<style>
-	.blog-card {
-		@apply rounded-lg border border-border px-4 py-3 transition-all duration-150 hover:border-primary hover:bg-muted/30 hover:-translate-y-0.5 cursor-pointer;
-	}
-</style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { experiences } from '$lib/experiences';
+	import { links } from '$lib/links';
 	import { projects, hackathonProjects } from '$lib/projects';
 	import { quips } from '$lib/quips';
 	import LineDecoration from '@/components/LineDecoration.svelte';
@@ -11,7 +12,7 @@
 	import FadeIn from '$lib/components/FadeIn.svelte';
 	import GradientName from '$lib/components/GradientName.svelte';
 	import TypewriterText from '$lib/components/TypewriterText.svelte';
-	import SocialLink from '$lib/components/SocialLink.svelte';
+	import IconLink from '@/lib/components/IconLink.svelte';
 	import ExperienceEntry from '$lib/components/ExperienceEntry.svelte';
 
 	const firstTwoProjects = projects.slice(0, 2);
@@ -28,12 +29,8 @@
 		<TypewriterText texts={quips} />
 	</h4>
 	<div class="flex gap-3 pt-1">
-		<SocialLink href="https://github.com/JaryJay" title="GitHub" icon="mdi:github" />
-		<SocialLink
-			href="https://linkedin.com/in/jay-ren-a57657206"
-			title="LinkedIn"
-			icon="mdi:linkedin"
-		/>
+		<IconLink href={links.github} title="GitHub" icon="mdi:github" />
+		<IconLink href={links.linkedin} title="LinkedIn" icon="mdi:linkedin" />
 	</div>
 </VerticalSection>
 <div class="py-2 sm:py-1" />

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Code from 'lucide-svelte/icons/code';
-	import Play from 'lucide-svelte/icons/play';
 	import type { Project } from '$lib/projects';
+	import IconLink from './IconLink.svelte';
 
 	export let project: Project;
 	/** Tailwind classes applied to each icon, e.g. override size or opacity. */
@@ -9,38 +8,26 @@
 </script>
 
 {#if project.devpostLink}
-	<a
+	<IconLink
 		href={project.devpostLink}
-		on:click|stopPropagation
-		target="_blank"
-		rel="noopener noreferrer"
 		title="View on Devpost"
-		class="hover:scale-110 transition-transform"
-	>
-		<Code class={iconClass} />
-	</a>
+		icon="mdi:code-tags"
+		iconClass={iconClass}
+	/>
 {/if}
 {#if project.githubLink}
-	<a
+	<IconLink
 		href={project.githubLink}
-		on:click|stopPropagation
-		target="_blank"
-		rel="noopener noreferrer"
 		title="View on GitHub"
-		class="hover:scale-110 transition-transform"
-	>
-		<span class="iconify {iconClass}" data-icon="mdi:github" data-inline="false"></span>
-	</a>
+		icon="mdi:github"
+		iconClass={iconClass}
+	/>
 {/if}
 {#if project.playLink}
-	<a
+	<IconLink
 		href={project.playLink}
-		on:click|stopPropagation
-		target="_blank"
-		rel="noopener noreferrer"
 		title="Play"
-		class="hover:scale-110 transition-transform"
-	>
-		<Play class={iconClass} />
-	</a>
+		icon="mdi:play-circle"
+		iconClass={iconClass}
+	/>
 {/if}
