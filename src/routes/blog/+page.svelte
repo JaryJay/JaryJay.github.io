@@ -24,7 +24,7 @@
 							{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
 						</time>
 					</div>
-					<p class="text-muted-foreground text-sm sm:text-base mt-1 !mt-1 line-clamp-2">{post.excerpt}</p>
+					<p class="text-muted-foreground text-sm sm:text-base mt-1 line-clamp-2">{post.excerpt}</p>
 				</a>
 			</FadeIn>
 		{/each}

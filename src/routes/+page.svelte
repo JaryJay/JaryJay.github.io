@@ -79,7 +79,7 @@
 							<span class="text-muted-foreground text-xs sm:text-sm">@ {experience.company}</span>
 						</div>
 						<div class="text-muted-foreground text-xs sm:text-sm">{experience.time} · {experience.location}</div>
-						<p class="text-sm sm:text-base mt-1 !mt-1">{experience.description}</p>
+						<p class="text-sm sm:text-base mt-1">{experience.description}</p>
 					</div>
 				</li>
 			</FadeIn>
