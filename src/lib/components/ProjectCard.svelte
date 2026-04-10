@@ -44,11 +44,7 @@
 			{project.name}
 		</h4>
 		<div class="flex gap-2">
-			<ProjectLinks
-				devpostLink={project.devpostLink}
-				githubLink={project.githubLink}
-				playLink={project.playLink}
-			/>
+			<ProjectLinks {project} />
 		</div>
 	</div>
 	<div class="flex-1">
@@ -74,9 +70,7 @@
 				<Dialog.Title class="flex gap-2 items-center">
 					{project.name}
 					<ProjectLinks
-						devpostLink={project.devpostLink}
-						githubLink={project.githubLink}
-						playLink={project.playLink}
+						{project}
 						iconClass="transition-colors size-6 text-opacity-80 hover:text-opacity-100"
 					/>
 				</Dialog.Title>
@@ -111,9 +105,7 @@
 					<DrawerTitle class="flex gap-2 items-center">
 						{project.name}
 						<ProjectLinks
-							devpostLink={project.devpostLink}
-							githubLink={project.githubLink}
-							playLink={project.playLink}
+							{project}
 							iconClass="transition-colors size-6 text-opacity-80 hover:text-opacity-100"
 						/>
 					</DrawerTitle>

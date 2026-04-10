@@ -15,7 +15,7 @@
 	)}
 >
 	<!-- Dot + connecting line column -->
-	<div class="flex flex-col items-center mt-1 shrink-0" style="width: 12px">
+	<div class="flex flex-col items-center mt-1 shrink-0 w-3">
 		<div
 			class={cn(
 				'w-3 h-3 rounded-full border-2 border-background shrink-0 z-10',
