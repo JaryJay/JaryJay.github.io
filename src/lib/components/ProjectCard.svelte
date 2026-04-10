@@ -26,35 +26,37 @@
 
 <Card
 	class={cn(
-		'bg-card text-card-foreground flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-primary transition-[outline] duration-200',
+		'bg-card text-card-foreground flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-primary transition-all duration-200 hover:-translate-y-0.5 cursor-pointer group/card',
 		$$props.class,
 	)}
 	slot="trigger"
 	on:click={() => (open = !open)}
 >
-	<img
-		src={project.imageUrls[0]}
-		alt={'Image representing ' + project.name}
-		class="object-cover h-30 rounded-md pointer-events-none aspect-ratio sm:h-36 md:h-48 lg:h-56"
-	/>
+	<div class="overflow-hidden rounded-md">
+		<img
+			src={project.imageUrls[0]}
+			alt={'Image representing ' + project.name}
+			class="object-cover h-30 rounded-md pointer-events-none aspect-ratio sm:h-36 md:h-48 lg:h-56 transition-transform duration-300 group-hover/card:scale-105"
+		/>
+	</div>
 	<div class="flex items-center justify-between">
 		<h4 class="text-sm font-semibold sm:text-base md:text-lg">
 			{project.name}
 		</h4>
 		<div class="flex gap-2">
 			{#if project.devpostLink}
-				<a href={project.devpostLink} on:click|stopPropagation target="__blank">
+				<a href={project.devpostLink} on:click|stopPropagation target="__blank" title="View on Devpost" class="hover:scale-110 transition-transform">
 					<Code class="transition-colors size-6" />
 				</a>
 			{/if}
 			{#if project.githubLink}
-				<a href={project.githubLink} on:click|stopPropagation target="__blank">
+				<a href={project.githubLink} on:click|stopPropagation target="__blank" title="View on GitHub" class="hover:scale-110 transition-transform">
 					<span class="transition-colors iconify size-6" data-icon="mdi:github" data-inline="false"
 					></span>
 				</a>
 			{/if}
 			{#if project.playLink}
-				<a href={project.playLink} on:click|stopPropagation target="__blank">
+				<a href={project.playLink} on:click|stopPropagation target="__blank" title="Play" class="hover:scale-110 transition-transform">
 					<Play class="transition-colors size-6" />
 				</a>
 			{/if}
@@ -67,6 +69,13 @@
 			{project.description}
 		</p>
 	</div>
+	{#if project.tags && project.tags.length > 0}
+		<div class="flex flex-wrap gap-1 pt-1">
+			{#each project.tags as tag}
+				<span class="tag-chip">{tag}</span>
+			{/each}
+		</div>
+	{/if}
 </Card>
 
 {#if $isDesktop}
@@ -76,12 +85,12 @@
 				<Dialog.Title class="flex gap-2 items-center">
 					{project.name}
 					{#if project.devpostLink}
-						<a href={project.devpostLink} on:click|stopPropagation target="__blank">
+						<a href={project.devpostLink} on:click|stopPropagation target="__blank" title="View on Devpost" class="hover:scale-110 transition-transform">
 							<Code class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 						</a>
 					{/if}
 					{#if project.githubLink}
-						<a href={project.githubLink} on:click|stopPropagation target="__blank">
+						<a href={project.githubLink} on:click|stopPropagation target="__blank" title="View on GitHub" class="hover:scale-110 transition-transform">
 							<span
 								class="transition-colors iconify size-6 text-opacity-80 hover:text-opacity-100"
 								data-icon="mdi:github"
@@ -90,7 +99,7 @@
 						</a>
 					{/if}
 					{#if project.playLink}
-						<a href={project.playLink} on:click|stopPropagation target="__blank">
+						<a href={project.playLink} on:click|stopPropagation target="__blank" title="Play" class="hover:scale-110 transition-transform">
 							<Play class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 						</a>
 					{/if}
@@ -126,12 +135,12 @@
 					<DrawerTitle class="flex gap-2 items-center">
 						{project.name}
 						{#if project.devpostLink}
-							<a href={project.devpostLink} on:click|stopPropagation target="__blank">
+							<a href={project.devpostLink} on:click|stopPropagation target="__blank" title="View on Devpost" class="hover:scale-110 transition-transform">
 								<Code class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 							</a>
 						{/if}
 						{#if project.githubLink}
-							<a href={project.githubLink} on:click|stopPropagation target="__blank">
+							<a href={project.githubLink} on:click|stopPropagation target="__blank" title="View on GitHub" class="hover:scale-110 transition-transform">
 								<span
 									class="transition-colors iconify size-6 text-opacity-80 hover:text-opacity-100"
 									data-icon="mdi:github"
@@ -140,7 +149,7 @@
 							</a>
 						{/if}
 						{#if project.playLink}
-							<a href={project.playLink} on:click|stopPropagation target="__blank">
+							<a href={project.playLink} on:click|stopPropagation target="__blank" title="Play" class="hover:scale-110 transition-transform">
 								<Play class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
 							</a>
 						{/if}
@@ -171,3 +180,9 @@
 		</DrawerContent>
 	</Drawer>
 {/if}
+
+<style>
+	:global(.tag-chip) {
+		@apply text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground font-medium;
+	}
+</style>

@@ -5,6 +5,7 @@ export interface Project {
 	githubLink?: string;
 	playLink?: string;
 	imageUrls: string[];
+	tags?: string[];
 }
 
 export const projects: Project[] = [
@@ -14,6 +15,7 @@ export const projects: Project[] = [
 			"An AI autocomplete Chrome extension for every input field.\nIt's built with React, and runs on Gemini 2.0 Flash.\n\nIt's still a work in progress, but you can watch the GitHub repo for updates!",
 		githubLink: 'https://github.com/JaryJay/sentir',
 		imageUrls: ['/projects/sentir/image.png'],
+		tags: ['React', 'TypeScript', 'Gemini'],
 	},
 	{
 		name: 'Chess Roguelike',
@@ -24,6 +26,7 @@ export const projects: Project[] = [
 			'/projects/chess-roguelike/faction-select.png',
 			'/projects/chess-roguelike/gameplay.png',
 		],
+		tags: ['Godot', 'GDScript', 'Mobile'],
 	},
 	{
 		name: 'Spring Dynasty',
@@ -35,6 +38,7 @@ export const projects: Project[] = [
 			'/projects/spring-dynasty/image2.png',
 			'/projects/spring-dynasty/image3.png',
 		],
+		tags: ['Godot', 'GDScript', 'Multiplayer'],
 	},
 	{
 		name: 'Personal Website',
@@ -42,6 +46,7 @@ export const projects: Project[] = [
 			"This site that you're looking at right now!\nBuilt with Svelte, ShadCN, and TailwindCSS.\nIt's a static website hosted with GitHub Pages.",
 		githubLink: 'https://github.com/JaryJay/JaryJay.github.io',
 		imageUrls: ['/projects/JaryJay.github.io/image.png'],
+		tags: ['Svelte', 'TailwindCSS', 'TypeScript'],
 	},
 	{
 		name: 'Facebook Bot',
@@ -49,6 +54,7 @@ export const projects: Project[] = [
 			'A desktop app that automatically scrapes Facebook Marketplace for deals.\nBuilt with Electron, Typescript, Vue.js, Selenium, and TailwindCSS!',
 		githubLink: 'https://github.com/JaryJay/facebook-bot',
 		imageUrls: ['/projects/facebook-bot/image.png'],
+		tags: ['Electron', 'Vue.js', 'Selenium'],
 	},
 	{
 		name: 'Java Serialization Library',
@@ -57,6 +63,7 @@ export const projects: Project[] = [
 		devpostLink: 'https://derealizer-class-generator.netlify.app/#/',
 		githubLink: 'https://github.com/virtual-cardboard/derealizer',
 		imageUrls: ['/projects/derealizer/image.png'],
+		tags: ['Java', 'Vue.js'],
 	},
 	{
 		name: 'TTRPG command-line tool',
@@ -66,6 +73,7 @@ export const projects: Project[] = [
 		imageUrls: [
 			'https://raw.githubusercontent.com/JaryJay/jaryjay-sharnon/main/screenshots/screenshot2.png',
 		],
+		tags: ['Java', 'CLI'],
 	},
 ];
 
@@ -80,6 +88,7 @@ export const hackathonProjects: Project[] = [
 			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/591/793/datas/gallery.jpg',
 			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/592/105/datas/gallery.jpg',
 		],
+		tags: ['Python', 'NLP', 'Hardware'],
 	},
 	// {
 	// 	name: 'Hermitrade',
@@ -103,5 +112,6 @@ export const hackathonProjects: Project[] = [
 			'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/021/947/datas/gallery.jpg',
 			'./projects/lost-in-gravity/image2.png',
 		],
+		tags: ['Unity', 'C#'],
 	},
 ];
