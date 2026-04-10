@@ -3,6 +3,8 @@
 	export let title: string;
 	/** Iconify icon identifier, e.g. "mdi:github" */
 	export let icon: string;
+	/** Tailwind size class for the icon. Defaults to "size-6". */
+	export let iconSize: string = 'size-6';
 </script>
 
 <a
@@ -12,7 +14,7 @@
 	rel="noopener noreferrer"
 	class="social-link"
 >
-	<span class="iconify size-6" data-icon={icon} data-inline="false"></span>
+	<span class="iconify {iconSize}" data-icon={icon} data-inline="false"></span>
 </a>
 
 <style>
