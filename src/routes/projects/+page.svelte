@@ -1,9 +1,9 @@
 <script lang="ts">
-	import LineDecoration from '../../components/LineDecoration.svelte';
-	import { projects } from '../../lib/projects';
-	import ProjectCard from '../../lib/components/ProjectCard.svelte';
+	import LineDecoration from '$lib/components/LineDecoration.svelte';
+	import { projects } from '$lib/projects';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import VerticalSection from '$lib/components/VerticalSection.svelte';
-	import DynamicGrid from '@/lib/components/DynamicGrid.svelte';
+	import DynamicGrid from '$lib/components/DynamicGrid.svelte';
 </script>
 
 <svelte:head>

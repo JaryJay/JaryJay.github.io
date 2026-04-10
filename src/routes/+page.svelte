@@ -3,7 +3,7 @@
 	import { links } from '$lib/links';
 	import { projects, hackathonProjects } from '$lib/projects';
 	import { quips } from '$lib/quips';
-	import LineDecoration from '@/components/LineDecoration.svelte';
+	import LineDecoration from '$lib/components/LineDecoration.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
@@ -12,7 +12,7 @@
 	import FadeIn from '$lib/components/FadeIn.svelte';
 	import GradientName from '$lib/components/GradientName.svelte';
 	import TypewriterText from '$lib/components/TypewriterText.svelte';
-	import IconLink from '@/lib/components/IconLink.svelte';
+	import IconLink from '$lib/components/IconLink.svelte';
 	import ExperienceEntry from '$lib/components/ExperienceEntry.svelte';
 
 	const firstTwoProjects = projects.slice(0, 2);

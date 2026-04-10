@@ -1,6 +1,6 @@
 <script lang="ts">
 	import FadeIn from '$lib/components/FadeIn.svelte';
-	import VerticalSection from "@/lib/components/VerticalSection.svelte";
+	import VerticalSection from '$lib/components/VerticalSection.svelte';
 	import { blogPosts } from "$lib/blogPosts";
 	import { kebabCase } from "$lib/kebabCase";
 </script>

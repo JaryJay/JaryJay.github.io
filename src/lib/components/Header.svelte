@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import DarkModeToggle from '@/components/DarkModeToggle.svelte';
+	import DarkModeToggle from '$lib/components/DarkModeToggle.svelte';
 
 	type Route = {
 		route: string;
