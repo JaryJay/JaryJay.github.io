@@ -6,14 +6,15 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
-	import { onMount } from 'svelte';
 	import VerticalSection from '$lib/components/VerticalSection.svelte';
 	import DynamicGrid from '$lib/components/DynamicGrid.svelte';
+	import FadeIn from '$lib/components/FadeIn.svelte';
+	import GradientName from '$lib/components/GradientName.svelte';
+	import TypewriterText from '$lib/components/TypewriterText.svelte';
+	import SocialLink from '$lib/components/SocialLink.svelte';
+	import ExperienceEntry from '$lib/components/ExperienceEntry.svelte';
 
 	const firstTwoProjects = projects.slice(0, 2);
-
-	let chosenQuip = '';
-	onMount(() => (chosenQuip = quips[Math.floor(Math.random() * quips.length)]));
 </script>
 
 <svelte:head>
@@ -22,20 +23,33 @@
 </svelte:head>
 
 <VerticalSection>
-	<h1 class="text-foreground font-semibold">Jay Ren</h1>
-	<h4 class="text-muted-foreground">{chosenQuip}&nbsp;</h4>
+	<GradientName>Jay Ren</GradientName>
+	<h4 class="text-muted-foreground">
+		<TypewriterText texts={quips} />
+	</h4>
+	<div class="flex gap-3 pt-1">
+		<SocialLink href="https://github.com/JaryJay" title="GitHub" icon="mdi:github" />
+		<SocialLink
+			href="https://linkedin.com/in/jay-ren-a57657206"
+			title="LinkedIn"
+			icon="mdi:linkedin"
+		/>
+	</div>
 </VerticalSection>
 <div class="py-2 sm:py-1" />
 <LineDecoration class="absolute transform rotate-2" />
 <div class="py-2 sm:hidden" />
 <VerticalSection>
 	<h3 id="experience" class="section-label">Experience</h3>
-	<div class="text-sm md:text-base text-foreground">
-		{#each experiences as experience}
-			<p>
-				{experience.time}: <b>{experience.title}</b> @ <b>{experience.company}</b>.
-				{experience.description}
-			</p>
+	<div class="space-y-0">
+		{#each experiences as experience, i}
+			<FadeIn delay={i * 80}>
+				<ExperienceEntry
+					{experience}
+					accent={i === 0}
+					last={i === experiences.length - 1}
+				/>
+			</FadeIn>
 		{/each}
 	</div>
 </VerticalSection>
@@ -44,8 +58,10 @@
 		<h3 id="projects" class="section-label">Projects</h3>
 	</div>
 	<DynamicGrid>
-		{#each firstTwoProjects as project}
-			<ProjectCard {project} />
+		{#each firstTwoProjects as project, i}
+			<FadeIn delay={i * 100}>
+				<ProjectCard {project} />
+			</FadeIn>
 		{/each}
 	</DynamicGrid>
 	<Button variant="ghost">
@@ -57,8 +73,11 @@
 <VerticalSection>
 	<h3 id="hackathon-wins" class="section-label">Hackathon Wins</h3>
 	<DynamicGrid>
-		{#each hackathonProjects as project}
-			<ProjectCard {project} />
+		{#each hackathonProjects as project, i}
+			<FadeIn delay={i * 100}>
+				<ProjectCard {project} />
+			</FadeIn>
 		{/each}
 	</DynamicGrid>
 </VerticalSection>
+

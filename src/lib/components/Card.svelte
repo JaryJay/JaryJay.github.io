@@ -7,7 +7,7 @@
 
 <button
 	class={cn(
-		'transition-shadow flex flex-col rounded-md sm:rounded-lg md:rounded-2xl shadow-md hover:shadow-xl md:shadow-lg hover:md:shadow-2xl p-4 text-left items-stretch',
+		'transition-shadow flex flex-col rounded-md sm:rounded-lg md:rounded-2xl shadow-md hover:shadow-xl md:shadow-lg hover:md:shadow-2xl p-4 text-left items-stretch cursor-pointer',
 		$$props.class,
 	)}
 	on:click

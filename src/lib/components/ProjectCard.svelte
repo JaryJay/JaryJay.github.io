@@ -17,8 +17,8 @@
 		Item as CarouselItem,
 	} from '$lib/components/ui/carousel';
 	import { Next, Previous } from '$lib/components/ui/carousel';
-	import Code from 'lucide-svelte/icons/code';
-	import Play from 'lucide-svelte/icons/play';
+	import ProjectLinks from './ProjectLinks.svelte';
+	import TagChip from './TagChip.svelte';
 	export let project: Project;
 	let open = false;
 	const isDesktop = mediaQuery('(min-width: 768px)');
@@ -26,38 +26,25 @@
 
 <Card
 	class={cn(
-		'bg-card text-card-foreground flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-primary transition-[outline] duration-200',
+		'bg-card text-card-foreground flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-primary transition-all duration-200 hover:-translate-y-0.5 cursor-pointer group/card',
 		$$props.class,
 	)}
 	slot="trigger"
 	on:click={() => (open = !open)}
 >
-	<img
-		src={project.imageUrls[0]}
-		alt={'Image representing ' + project.name}
-		class="object-cover h-30 rounded-md pointer-events-none aspect-ratio sm:h-36 md:h-48 lg:h-56"
-	/>
+	<div class="overflow-hidden rounded-md">
+		<img
+			src={project.imageUrls[0]}
+			alt={'Image representing ' + project.name}
+			class="object-cover h-30 rounded-md pointer-events-none aspect-ratio sm:h-36 md:h-48 lg:h-56 transition-transform duration-300 group-hover/card:scale-105"
+		/>
+	</div>
 	<div class="flex items-center justify-between">
 		<h4 class="text-sm font-semibold sm:text-base md:text-lg">
 			{project.name}
 		</h4>
 		<div class="flex gap-2">
-			{#if project.devpostLink}
-				<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-					<Code class="transition-colors size-6" />
-				</a>
-			{/if}
-			{#if project.githubLink}
-				<a href={project.githubLink} on:click|stopPropagation target="__blank">
-					<span class="transition-colors iconify size-6" data-icon="mdi:github" data-inline="false"
-					></span>
-				</a>
-			{/if}
-			{#if project.playLink}
-				<a href={project.playLink} on:click|stopPropagation target="__blank">
-					<Play class="transition-colors size-6" />
-				</a>
-			{/if}
+			<ProjectLinks {project} />
 		</div>
 	</div>
 	<div class="flex-1">
@@ -67,6 +54,13 @@
 			{project.description}
 		</p>
 	</div>
+	{#if project.tags && project.tags.length > 0}
+		<div class="flex flex-wrap gap-1 pt-1">
+			{#each project.tags as tag}
+				<TagChip {tag} />
+			{/each}
+		</div>
+	{/if}
 </Card>
 
 {#if $isDesktop}
@@ -75,25 +69,10 @@
 			<Dialog.Header>
 				<Dialog.Title class="flex gap-2 items-center">
 					{project.name}
-					{#if project.devpostLink}
-						<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-							<Code class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
-						</a>
-					{/if}
-					{#if project.githubLink}
-						<a href={project.githubLink} on:click|stopPropagation target="__blank">
-							<span
-								class="transition-colors iconify size-6 text-opacity-80 hover:text-opacity-100"
-								data-icon="mdi:github"
-								data-inline="false"
-							></span>
-						</a>
-					{/if}
-					{#if project.playLink}
-						<a href={project.playLink} on:click|stopPropagation target="__blank">
-							<Play class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
-						</a>
-					{/if}
+					<ProjectLinks
+						{project}
+						iconClass="transition-colors size-6 text-opacity-80 hover:text-opacity-100"
+					/>
 				</Dialog.Title>
 				<Dialog.Description class="whitespace-pre-line">
 					{project.description}
@@ -125,25 +104,10 @@
 				<DrawerHeader class="text-left">
 					<DrawerTitle class="flex gap-2 items-center">
 						{project.name}
-						{#if project.devpostLink}
-							<a href={project.devpostLink} on:click|stopPropagation target="__blank">
-								<Code class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
-							</a>
-						{/if}
-						{#if project.githubLink}
-							<a href={project.githubLink} on:click|stopPropagation target="__blank">
-								<span
-									class="transition-colors iconify size-6 text-opacity-80 hover:text-opacity-100"
-									data-icon="mdi:github"
-									data-inline="false"
-								></span>
-							</a>
-						{/if}
-						{#if project.playLink}
-							<a href={project.playLink} on:click|stopPropagation target="__blank">
-								<Play class="transition-colors size-6 text-opacity-80 hover:text-opacity-100" />
-							</a>
-						{/if}
+						<ProjectLinks
+							{project}
+							iconClass="transition-colors size-6 text-opacity-80 hover:text-opacity-100"
+						/>
 					</DrawerTitle>
 					<DrawerDescription class="whitespace-pre-line">
 						{project.description}
@@ -171,3 +135,4 @@
 		</DrawerContent>
 	</Drawer>
 {/if}
+

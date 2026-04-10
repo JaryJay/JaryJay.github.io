@@ -1,16 +1,21 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import '../app.css';
 	import { ModeWatcher } from 'mode-watcher';
+	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
 </script>
 
 <ModeWatcher />
 <div class="app">
 	<Header />
 
-	<main>
-		<slot />
-	</main>
+	{#key $page.url.pathname}
+		<main in:fade={{ duration: 180, delay: 60 }} out:fade={{ duration: 120 }}>
+			<slot />
+		</main>
+	{/key}
 
-	<!-- <footer class="mx-auto max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl">Footer</footer> -->
+	<Footer />
 </div>

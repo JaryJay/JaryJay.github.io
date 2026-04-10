@@ -14,6 +14,7 @@
 	];
 </script>
 
+<div class="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
 <header
 	class="mx-auto max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl flex justify-between items-center py-2"
 >
@@ -33,6 +34,7 @@
 		<DarkModeToggle />
 	</div>
 </header>
+</div>
 
 <style>
 	li[aria-current='page'] {
