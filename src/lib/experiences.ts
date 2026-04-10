@@ -4,6 +4,8 @@ export interface Experience {
 	time: string;
 	location: string;
 	description: string;
+	/** Optional URL for the company logo image. */
+	logoUrl?: string;
 }
 
 export const experiences: Experience[] = [
