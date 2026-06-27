@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
 		company: 'NVIDIA',
 		time: 'Summer 2026',
 		location: 'Santa Clara, CA',
-		description: "I'll be contributing to NVIDIA's deep learning software stack (cuDNN/TensorRT).",
+		description: "Built evaluation harness CLI to A/B test adversarial agents. Currently analyzing GPU kernel host code for automotive safety.",
 	},
 	{
 		title: 'Deep Learning Compiler Development Intern',
@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
 		time: 'Fall 2025',
 		location: 'Markham, ON',
 		description:
-			'Worked on an LLVM/MLIR-based compiler for neural network inference on custom hardware. Owned a fuzz testing project for testing the compiler on procedurally generated MLIR modules.',
+			'Engineered a differential testing infrastructure to test ML compiler output against PyTorch. Wrote fuzz tester to procedurally generate & compile MLIR modules.',
 	},
 	{
 		title: 'Software Engineering Intern',
