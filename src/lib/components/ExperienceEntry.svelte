@@ -39,17 +39,20 @@
 	<!-- Content -->
 	<div class="flex-1 pb-2 min-w-0">
 		<div class="flex flex-wrap items-baseline gap-x-2">
+			<span class="font-bold text-accent-foreground">{experience.company}</span>
+			<!-- <span class="text-muted-foreground">·</span>
 			<span
 				class={cn(
-					'font-semibold text-sm sm:text-base',
-					accent && 'text-amber-600 dark:text-accent-foreground',
+					'font-light',
+					accent && 'text-accent-foreground',
 				)}>{experience.title}</span
-			>
-			<span class="text-muted-foreground text-xs sm:text-sm">@ {experience.company}</span>
+			> -->
 		</div>
-		<div class="text-muted-foreground text-xs sm:text-sm">
-			{experience.time} · {experience.location}
+		<div class="text-muted-foreground flex gap-x-1 text-xs sm:text-sm">
+			<span>{experience.time}</span>
+			<span>·</span>
+			<span>{experience.location}</span>
 		</div>
-		<p class="text-sm sm:text-base mt-1">{experience.description}</p>
+		<p class="mt-2 sm:mt-4">{experience.description}</p>
 	</div>
 </div>
