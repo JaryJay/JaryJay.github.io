@@ -12,7 +12,7 @@
 </svelte:head>
 
 <VerticalSection>
-	<h3 class="section-label">Projects</h3>
+	<h2 class="section-label">Projects</h2>
 	<DynamicGrid>
 		{#each projects as project}
 			<ProjectCard {project} />

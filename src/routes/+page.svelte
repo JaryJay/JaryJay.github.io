@@ -25,9 +25,9 @@
 
 <VerticalSection>
 	<GradientName>Jay Ren</GradientName>
-	<h4 class="text-muted-foreground">
+	<p class="text-lg text-muted-foreground">
 		<TypewriterText texts={quips} />
-	</h4>
+	</p>
 	<div class="flex gap-3 pt-1">
 		<IconLink href={links.github} title="GitHub" icon="mdi:github" />
 		<IconLink href={links.linkedin} title="LinkedIn" icon="mdi:linkedin" />
@@ -37,7 +37,7 @@
 <LineDecoration class="absolute transform rotate-2" />
 <div class="py-2 sm:hidden" />
 <VerticalSection>
-	<h3 id="experience" class="section-label">Experience</h3>
+	<h2 id="experience" class="section-label">Experience</h2>
 	<div class="space-y-0">
 		{#each experiences as experience, i}
 			<FadeIn delay={i * 80}>
@@ -52,7 +52,7 @@
 </VerticalSection>
 <VerticalSection>
 	<div class="flex items-center gap-4">
-		<h3 id="projects" class="section-label">Projects</h3>
+		<h2 id="projects" class="section-label">Projects</h2>
 	</div>
 	<DynamicGrid>
 		{#each firstTwoProjects as project, i}
@@ -68,7 +68,7 @@
 	</Button>
 </VerticalSection>
 <VerticalSection>
-	<h3 id="hackathon-wins" class="section-label">Hackathon Wins</h3>
+	<h2 id="hackathon-wins" class="section-label">Hackathon Wins</h2>
 	<DynamicGrid>
 		{#each hackathonProjects as project, i}
 			<FadeIn delay={i * 100}>

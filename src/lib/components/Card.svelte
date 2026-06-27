@@ -13,7 +13,7 @@
 	on:click
 >
 	<slot>
-		<h4>{title}</h4>
+		<h4 class="heading-4">{title}</h4>
 		<div class="flex-1">
 			<p class="truncate sm:text-ellipsis">{description}</p>
 		</div>

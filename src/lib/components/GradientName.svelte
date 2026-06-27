@@ -1,4 +1,4 @@
-<h1 class="gradient-name font-semibold">
+<h1 class="gradient-name heading-1">
 	<slot />
 </h1>
 

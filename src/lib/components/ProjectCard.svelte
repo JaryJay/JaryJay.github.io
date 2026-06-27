@@ -40,16 +40,16 @@
 		/>
 	</div>
 	<div class="flex items-center justify-between">
-		<h4 class="text-sm font-semibold sm:text-base md:text-lg">
+		<h3 class="heading-3">
 			{project.name}
-		</h4>
+		</h3>
 		<div class="flex gap-2">
 			<ProjectLinks {project} />
 		</div>
 	</div>
 	<div class="flex-1">
 		<p
-			class="text-sm whitespace-pre-line sm:text-base md:text-lg line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-ellipsis"
+			class="text-lg leading-7 whitespace-pre-line line-clamp-2 sm:line-clamp-3 md:line-clamp-4 text-ellipsis"
 		>
 			{project.description}
 		</p>
