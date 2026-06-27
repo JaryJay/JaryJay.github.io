@@ -17,10 +17,10 @@
 			<FadeIn delay={i * 80}>
 				<a
 					href={`/blog/${kebabCase(post.slug)}`}
-					class="group block rounded-lg border border-border px-4 py-3 transition-all duration-150 hover:border-primary hover:bg-muted/30 cursor-pointer"
+					class="group block rounded-lg border border-border px-4 py-3 transition-all duration-150 hover:border-brand hover:bg-muted/30 cursor-pointer"
 				>
 					<div class="flex items-start justify-between gap-4">
-						<h3 class="heading-3 group-hover:text-primary transition-colors">
+						<h3 class="heading-3 group-hover:text-brand transition-colors">
 							{post.title}
 						</h3>
 						<time class="text-muted-foreground text-xs sm:text-sm whitespace-nowrap pt-1">

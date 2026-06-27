@@ -49,6 +49,10 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+				brand: {
+					DEFAULT: 'hsl(var(--brand))',
+					foreground: 'hsl(var(--brand-foreground))',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -64,7 +68,7 @@ module.exports = {
 						'--tw-prose-body': 'hsl(var(--foreground))',
 						'--tw-prose-headings': 'hsl(var(--foreground))',
 						'--tw-prose-lead': 'hsl(var(--muted-foreground))',
-						'--tw-prose-links': 'hsl(var(--primary))',
+						'--tw-prose-links': 'hsl(var(--brand))',
 						'--tw-prose-bold': 'hsl(var(--foreground))',
 						'--tw-prose-counters': 'hsl(var(--muted-foreground))',
 						'--tw-prose-bullets': 'hsl(var(--muted-foreground))',

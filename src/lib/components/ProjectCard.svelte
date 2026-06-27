@@ -26,7 +26,7 @@
 
 <Card
 	class={cn(
-		'bg-card text-card-foreground size-full flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-primary transition-all duration-200 hover:-translate-y-0.5 cursor-pointer group/card',
+		'bg-card text-card-foreground size-full flex flex-col gap-1 md:gap-2 outline outline-1 outline-border hover:outline-brand transition-all duration-200 hover:-translate-y-0.5 cursor-pointer group/card',
 		$$props.class,
 	)}
 	slot="trigger"

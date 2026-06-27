@@ -43,7 +43,7 @@
 			<FadeIn delay={i * 80}>
 				<ExperienceEntry
 					{experience}
-					accent={i === 0}
+					highlighted={i === 0}
 					last={i === experiences.length - 1}
 				/>
 			</FadeIn>
